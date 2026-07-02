@@ -3,21 +3,23 @@ from abc import ABC, abstractmethod
 # Abstract Base Class
 class DatabaseSaver(ABC):
     @abstractmethod
-    def save(self, cart):
+    def save(self, userData):
         pass
 
 
 class SqlDatabaseSaver(DatabaseSaver):
-    def save(self, cart):
-        print("Saving shopping cart to SQL database...")
+    def save(self, userData):
+        print(f"Saving {userData} to SQL database...")
 
 class MongoDatabaseSaver(DatabaseSaver):
-    def save(self, cart):
-        print("Saving shopping cart to MongoDB...")
+    def save(self, userData):
+        print(f"Saving {userData} to MongoDB...")
 
 class Userservice:
     def __init__(self,database: DatabaseSaver):
         self.database = database
+
+        
     def storeUserData(self,userData):
         self.database.save(userData)
 
