@@ -1,0 +1,41 @@
+MusicPlayerApp/
+│
+├── main.py                              # Composition root and entry point
+├── MusicPlayerFacade.py                 # Facade class (orchestrator)
+├── MusicPlayerApplication.py            # High-level application/demo runner
+│
+├── core/
+│   └── AudioEngine.py                   # Playback engine
+│
+├── enums/                               # All shared enum types
+│   ├── DeviceType.py                    # enum DeviceType { BLUETOOTH, WIRED, HEADPHONES }
+│   └── PlayStrategyType.py              # enum PlayStrategyType { SEQUENTIAL, RANDOM, CUSTOM_QUEUE }
+│
+├── models/
+│   ├── Song.py
+│   └── Playlist.py
+│
+├── managers/
+│   ├── PlaylistManager.py
+│   ├── DeviceManager.py
+│   └── StrategyManager.py
+│
+├── strategies/
+│   ├── PlayStrategy.py
+│   ├── SequentialPlayStrategy.py
+│   ├── RandomPlayStrategy.py
+│   └── CustomQueueStrategy.py
+│
+├── device/                              # Audio device interfaces & adapters
+│   ├── IAudioOutputDevice.py
+│   ├── BluetoothSpeakerAdapter.py
+│   ├── WiredSpeakerAdapter.py
+│   └── HeadphonesAdapter.py
+│
+├── external/                            # External devices
+│   ├── BluetoothSpeakerAPI.py
+│   ├── HeadphonesAPI.py
+│   └── WiredSpeakerAPI.py
+│
+└── factories/
+    └── DeviceFactory.py                 # Creates IAudioOutputDevice instances
