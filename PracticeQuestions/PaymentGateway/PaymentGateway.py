@@ -45,7 +45,13 @@ class RazorpayBankingSystem(BankingSystem):
         # Simulate 90% success
         return random.randint(0, 99) < 90
 
+class BhimBankingSystem(BankingSystem):
 
+    def process_payment(self, amount):
+        print(f"[BankingSystem-Bhim] Processing payment of {amount}...")
+
+        # Simulate 70% success
+        return random.randint(0, 99) < 70
 # ============================================================
 # 3. Payment Gateway
 #    Template Method Pattern
